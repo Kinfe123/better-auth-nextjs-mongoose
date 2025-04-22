@@ -1,4 +1,4 @@
-# Better Auth Starter with Next.js and Drizzle
+# Better Auth Starter with Next.js and MongoDB
 
 A complete authentication solution using Better Auth, Next.js, and Prisma.
 
@@ -17,15 +17,15 @@ A complete authentication solution using Better Auth, Next.js, and Prisma.
 
 - Node.js 18+
 - pnpm (recommended) or npm
-- PostgreSQL database
+- MongoDB database
 
 ## Installation
 
 1. **Clone the project**
 
 ```bash
-git clone https://github.com/Kinfe123/better-auth-nextjs-drizzle
-cd better-auth-nextjs-drizzle
+git clone https://github.com/Kinfe123/better-auth-nextjs-mongoose
+cd better-auth-nextjs-mongoose
 ```
 
 2. **Install dependencies**
@@ -43,7 +43,7 @@ cp .env.example .env
 Edit `.env` with your configuration:
 
 ```env
-DATABASE_URL="postgresql://user:password@localhost:5432/mydb?schema=public"
+DATABASE_URL="mongodb://...."
 AUTH_SECRET="your-auth-secret" # Generate with: openssl rand -base64 32
 GOOGLE_CLIENT_ID="your-google-client-id"
 GOOGLE_CLIENT_SECRET="your-google-client-secret"
@@ -55,10 +55,7 @@ GITHUB_CLIENT_SECRET="your-github-client-secret"
 
 5. **Run database migrations**
 
-```bash
-pnpm drizzle-kit generate
-pnpm drizzle-kit push
-```
+For MongoDB, we don't need to generate or migrate the schema.
 
 6. **Run dev server**
 
