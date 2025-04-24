@@ -9,9 +9,7 @@ import { authClient } from "@/lib/auth-client";
 import LogoutButton from "@/components/auth/logout-button-icon";
 import HeroSection from "./_components/hero";
 export default async function page() {
-  const session = await auth.api.getSession({
-    headers: await headers(),
-  });
+  const session = {};
   return (
     <div className="flex relative min-h-screen flex-col">
       <header className="relative z-20 border-b">
