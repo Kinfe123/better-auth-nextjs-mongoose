@@ -57,7 +57,6 @@ export function LoginForm({
          */
         rememberMe: false,
       },
-
       {
         onRequest: (ctx) => {
           setLoading(true);
