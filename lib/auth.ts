@@ -4,13 +4,14 @@ import { nextCookies } from "better-auth/next-js";
 import { admin, createAuthMiddleware } from "better-auth/plugins";
 import { dbConnect, db } from "./db";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
+import { Db } from "mongodb";
 await dbConnect();
 
 if (!db) {
   throw new Error("Database not connected");
 }
 export const auth = betterAuth({
-  database: mongodbAdapter(db),
+  database: mongodbAdapter(db as unknown as Db),
   emailAndPassword: {
     enabled: true,
   },

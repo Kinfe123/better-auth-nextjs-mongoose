@@ -9,10 +9,10 @@ const mongoGlobal = global as typeof globalThis & {
   mongoose: dbCache;
 };
 
-const MONGODB_URI = process.env.MONGODB_URI as string;
+const MONGODB_URI = process.env.DATABASE_URL as string;
 
 if (!MONGODB_URI) {
-  throw new Error("Please define the MONGODB_URI environment variable");
+  throw new Error("Please define the DATABASE_URL environment variable");
 }
 
 const cached = mongoGlobal.mongoose ?? { conn: null, promise: null };
