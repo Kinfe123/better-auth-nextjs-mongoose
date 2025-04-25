@@ -2,8 +2,13 @@ import { APIError, betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { nextCookies } from "better-auth/next-js";
 import { admin, createAuthMiddleware } from "better-auth/plugins";
-import { db } from "./db";
+import { dbConnect, db } from "./db";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
+await dbConnect();
+
+if (!db) {
+  throw new Error("Database not connected");
+}
 export const auth = betterAuth({
   database: mongodbAdapter(db),
   emailAndPassword: {
