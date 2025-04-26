@@ -41,7 +41,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { User } from "@/lib/db";
+import { User } from "@/lib/auth";
 const data = {
   navMain: [
     {

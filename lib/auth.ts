@@ -5,6 +5,7 @@ import { admin, createAuthMiddleware } from "better-auth/plugins";
 import { db } from "./db";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { Db } from "mongodb";
+import { Exo } from "next/font/google";
 if (!db) {
   throw new Error("Database not connected");
 }
@@ -52,3 +53,6 @@ export const auth = betterAuth({
     },
   },
 });
+export type UserSession = typeof auth.$Infer.Session;
+export type User = UserSession["user"];
+export type Session = UserSession["session"];

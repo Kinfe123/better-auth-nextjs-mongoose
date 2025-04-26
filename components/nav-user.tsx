@@ -24,7 +24,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { User } from "@/lib/db";
+import { User } from "@/lib/auth";
 import LogoutButton from "./auth/logout-button";
 import { ChevronsUpDown } from "lucide-react";
 
