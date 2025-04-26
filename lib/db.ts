@@ -40,5 +40,6 @@ async function dbConnect(): Promise<typeof mongoose> {
 
   return cached.conn;
 }
-const db = mongoose.connection.db;
-export { dbConnect, db };
+const conn = await dbConnect();
+const db = conn.connection.db;
+export { db };

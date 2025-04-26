@@ -2,11 +2,9 @@ import { APIError, betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { nextCookies } from "better-auth/next-js";
 import { admin, createAuthMiddleware } from "better-auth/plugins";
-import { dbConnect, db } from "./db";
+import { db } from "./db";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { Db } from "mongodb";
-await dbConnect();
-
 if (!db) {
   throw new Error("Database not connected");
 }
