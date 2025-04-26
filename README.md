@@ -70,7 +70,7 @@ Common issues and solutions:
 1. **Database Connection Issues**
 
    - Verify your DATABASE_URL in .env
-   - Ensure PostgreSQL is running
+   - Ensure MONGO_URL is running
    - Check database permissions
 
 2. **Authentication Errors**
