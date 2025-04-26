@@ -1,6 +1,6 @@
 # Better Auth Starter with Next.js and MongoDB
 
-A complete authentication solution using Better Auth, Next.js, and Prisma.
+A complete authentication solution using Better Auth, Next.js, and MongoDB.
 
 ## Features
 
